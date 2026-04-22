@@ -1,87 +1,168 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background: linear-gradient(135deg, #0b1220, #0f172a);
+  color: #e2e8f0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
+.container {
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 28px;
+  background: #111827;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+}
+
+/* TITULOS */
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-.card {
-  padding: 2em;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  margin-bottom: 10px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+h2 {
+  text-align: center;
+  margin: 25px 0;
+  color: #38bdf8;
 }
-.status-recibido { background-color: #ffeb3b; padding: 4px 8px; border-radius: 4px; color: black; }
-.status-en-proceso { background-color: #2196f3; padding: 4px 8px; border-radius: 4px; color: white; }
-.status-finalizado { background-color: #4caf50; padding: 4px 8px; border-radius: 4px; color: white; }
 
-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-th { background-color: #f4f4f4; }
-.report-summary { background: #f9f9f9; padding: 10px; border-left: 5px solid #333; margin-bottom: 20px; }
+/* BUSCADOR */
+.buscador {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: none;
+  background: #1f2937;
+  color: white;
+  outline: none;
+}
+
+.buscador:focus {
+  border: 1px solid #38bdf8;
+}
+
+/* FORM */
+form {
+  background: #0f172a;
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.campo {
+  margin-bottom: 12px;
+}
+
+label {
+  font-size: 13px;
+  margin-bottom: 4px;
+  display: block;
+  color: #94a3b8;
+}
+
+input, select {
+  width: 100%;
+  padding: 9px;
+  border-radius: 6px;
+  border: none;
+  background: #1e293b;
+  color: white;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border: 1px solid #38bdf8;
+}
+
+/* BOTON PRINCIPAL */
+button {
+  width: 100%;
+  padding: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+/* TABLA */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: #0f172a;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background: #1e3a8a;
+  color: white;
+  padding: 10px;
+  font-size: 13px;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #1f2937;
+  font-size: 13px;
+}
+
+tr:hover {
+  background: #1e293b;
+}
+
+/* BOTONES ACCIONES */
+.acciones {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-edit,
+.btn-delete {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.btn-edit {
+  background: #e0e0e0;
+}
+
+.btn-delete {
+  background: #e0e0e0;
+}
+
+/* ESTADOS */
+.status-recibido,
+.status-en-proceso,
+.status-finalizado {
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.status-recibido {
+  background: #facc15;
+  color: #111;
+}
+
+.status-en-proceso {
+  background: #3b82f6;
+  color: white;
+}
+
+.status-finalizado {
+  background: #22c55e;
+  color: white;
+}
